@@ -104,7 +104,7 @@
 <!-- End Google Tag Manager (noscript) -->
 <div class="header">
     <h1>JaneSellers.com</h1>
-    <a href="https://forms.gle/CZocLedszHUgckMS8" ">Submit your Business</a>
+    <a href="https://forms.gle/CZocLedszHUgckMS8">Submit your Business</a>
 </div>
 <div class="main-content">
     <!-- News and Misc Links Section -->
@@ -114,6 +114,19 @@
             This is a community ran list, if you would like to help maintain the list please reach out.
         </p>
         <h3>Other Links</h3>
+        <!-- Add this section where you want the button to appear -->
+        <div class="news-alert">
+            <button id="newsButton">Breaking Seller News!</button>
+            <p id="newsContent" style="display:none;">
+                They are liquidating Jane without bankruptcy and will be paying off creditors. Secured debt gets paid first (taxes, wages, etc) and I was told that Jane has $7 million in secured debt that must be paid prior to any sellers getting a payout!
+                They cannot guarantee that you will get any money BUT if you want the chance to get a payout, you HAVE TO fill out their claim form. They will have to mail you paperwork to fill out. If you do not fill this out, you will not be considered for a payout!! You have approximately 118 days left to do this and get it back. (Process started Monday/start of countdown from 120 days)
+                I was also told that they will have access to Jane’s site and will be able to get into our ledgers to confirm the amounts we are requesting.
+                I have not received my paperwork as I just called so I can’t prep you for that (yet).
+                CALL NOW!
+                I talked to Steve Victor.
+                DSI Chicago # 312-263-4141
+            </p>
+        </div>
         <a href="http://www.sellersofjane.com">Sellers Of Jane</a><br/>
         <a href="https://emajane.com/">emaJane</a><br/>
         <h3>News</h3>
@@ -125,6 +138,16 @@
         <iframe class="airtable-embed" src="https://airtable.com/embed/appti60ssseYOPAFt/shrgMiTs1uDrglffh?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="950" style="background: transparent; border: 1px solid #ccc;"></iframe>
     </div>
 </div>
-
+<!-- Add this script before the closing body tag -->
+<script>
+    document.getElementById('newsButton').onclick = function() {
+        var content = document.getElementById('newsContent');
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+        } else {
+            content.style.display = 'none';
+        }
+    };
+</script>
 </body>
 </html>
