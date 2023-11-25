@@ -10,10 +10,10 @@
     <!-- Minimalist design with vibrant colors and bold typography -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #4A4A4A;
             background-color: #fff; /* White space */
         }
 
@@ -22,96 +22,99 @@
             justify-content: space-between;
             align-items: center;
             padding: 1em 2em;
-            background-color: #007bff; /* Vibrant color */
-            color: #fff; /* Bold contrast text */
+            background-color: #0056b3; /* Deep blue background */
+            color: #fff;
         }
 
         .header h1 {
             margin: 0;
             font-size: 2em;
+            font-weight: 600;
         }
 
         .header a {
             color: #fff;
             text-decoration: none;
             font-size: 1em;
-            background-color: #28a745; /* Coordinated color for the button */
+            background-color: #00a86b; /* Jade green button */
             padding: 0.5em 1em;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header a:hover {
+            background-color: #008000; /* Darker jade green on hover */
         }
 
         .main-content {
             padding: 2em;
         }
 
-        /* Responsive iframe for Airtable */
         .responsive-iframe {
             overflow: hidden;
             padding-top: 56.25%;
             position: relative;
-            height:600px;
         }
 
         .responsive-iframe iframe {
             border: none;
-            height: 100%;
-            left: 0;
             position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
         }
 
-        .news-section {
-            margin-bottom: 2em;
-        }
-
-        .news-section h2 {
-            font-size: 1.5em;
-            color: #007bff; /* Vibrant color */
-        }
-
-        .news-section a {
-            text-decoration: none;
-            color: #28a745; /* Coordinated color for links */
-        }
-
-        .news-section p {
-            font-size: 1em;
-            margin-top: 0.5em;
-        }
-
-        .info-card {
-            background-color: #f8f9fa; /* Light grey background for the info card */
-            border-left: 5px solid #007bff; /* Vibrant color accent on the side */
+        .info-section {
             padding: 1em;
+            background-color: #f2f2f2; /* Light grey background */
             margin-bottom: 2em;
+            border-left: 5px solid #0056b3; /* Deep blue accent on the side */
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
         }
 
-        .info-card h2 {
-            color: #333; /* Dark text for readability */
-            margin-top: 0;
+        .info-section h2,
+        .info-section h3,
+        .info-section p {
+            margin: 0.5em 0;
         }
 
-        .info-card p {
-            color: #555; /* Slightly lighter text for the description */
+        .info-section a {
+            color: #00a86b; /* Jade green links */
+            text-decoration: none;
+            margin-bottom: 0.5em;
+            display: block;
         }
 
-        .info-card a {
-            display: inline-block; /* Align link with the text */
+        .info-section a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
+
+        .news-alert button {
+            padding: 0.5em 1em;
+            background-color: #ffcc00; /* Yellow button for alert */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             margin-top: 1em;
         }
 
-        /* Enhance the CTA button */
-        .header a {
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow to the CTA button */
+        .news-alert p {
+            margin-top: 0.5em;
+            padding: 0.5em;
+            background-color: #fff3cd; /* Light yellow background for alert text */
+            border: 1px solid #ffeeba; /* Border color for alert text */
+            border-radius: 5px;
         }
 
-        /* Responsive design adjustments */
         @media (max-width: 768px) {
-            .info-card {
-                padding: 1em;
+            .header, .info-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header h1, .header a {
+                margin-bottom: 1em;
             }
         }
     </style>
@@ -143,32 +146,28 @@
 </div>
 <div class="main-content">
     <!-- News and Misc Links Section -->
-    <div class="news-section">
-        <h2>Information</h2>
-        <p>
-            This is a community ran list, if you would like to help maintain the list please reach out.
-        </p>
+    <div class="info-section">
+        <h2>Community-Driven List</h2>
+        <p>If you'd like to help maintain the list, please reach out to us.</p>
         <h3>News</h3>
-        <!-- Add this section where you want the button to appear -->
-        <a href="https://youtu.be/-4eN7MbGFvc">The Final Recording Call to all Employees</a><br/>
-
+        <a href="https://youtu.be/-4eN7MbGFvc">The Final Recording Call to all Employees</a>
         <div class="news-alert">
             <button id="newsButton">Breaking Seller News!</button>
-            <p id="newsContent" style="display:none;">
-                They are liquidating Jane without bankruptcy and will be paying off creditors. Secured debt gets paid first (taxes, wages, etc) and I was told that Jane has $7 million in secured debt that must be paid prior to any sellers getting a payout!
-                They cannot guarantee that you will get any money BUT if you want the chance to get a payout, you HAVE TO fill out their claim form. They will have to mail you paperwork to fill out. If you do not fill this out, you will not be considered for a payout!! You have approximately 118 days left to do this and get it back. (Process started Monday/start of countdown from 120 days)
-                I was also told that they will have access to Jane’s site and will be able to get into our ledgers to confirm the amounts we are requesting.
-                I have not received my paperwork as I just called so I can’t prep you for that (yet).
-                CALL NOW!
-                I talked to Steve Victor.
-                DSI Chicago # 312-263-4141
-            </p>
-        </div>
-        <h3>Links</h3>
+            <p id="newsContent" style="display:none; max-width: 700px">
+                    They are liquidating Jane without bankruptcy and will be paying off creditors. Secured debt gets paid first (taxes, wages, etc) and I was told that Jane has $7 million in secured debt that must be paid prior to any sellers getting a payout!
 
-        <a href="http://www.sellersofjane.com">Sellers Of Jane</a><br/>
-        <a href="https://emajane.com/">emaJane</a><br/>
-        <a href="https://ksltv.com/602420/lehi-police-open-investigation-into-jane-com-after-sellers-claim-they-werent-paid/">Police Open Investigation</a><br/>
+                <Br/>They cannot guarantee that you will get any money BUT if you want the chance to get a payout, you HAVE TO fill out their claim form. They will have to mail you paperwork to fill out. If you do not fill this out, you will not be considered for a payout!! You have approximately 118 days left to do this and get it back. (Process started Monday/start of countdown from 120 days)
+                <Br/>I was also told that they will have access to Jane’s site and will be able to get into our ledgers to confirm the amounts we are requesting.
+                <Br/>I have not received my paperwork as I just called so I can’t prep you for that (yet).
+                <Br/>CALL NOW!
+                <Br/>I talked to Steve Victor.
+                <Br/>DSI Chicago # 312-263-4141
+                </p>
+        </div>
+        <h3>Useful Links</h3>
+        <a href="http://www.sellersofjane.com">Sellers Of Jane</a>
+        <a href="https://emajane.com/">emaJane</a>
+        <a href="https://ksltv.com/602420/lehi-police-open-investigation-into-jane-com-after-sellers-claim-they-werent-paid/">Police Open Investigation</a>
         <a href="https://www.linkedin.com/posts/brendon-beebe_janecom-is-going-out-of-business-recent-activity-7131339156974141440-Oi9U?utm_source=share&utm_medium=member_desktop">Jane.com Shutdown Details</a>
     </div>
     <!-- Embed Airtable -->
